@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-image: url(images/black-background-with-focus-spot-light_1017-27230.avif);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 1550px;
+    max-height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    padding-bottom: 0.5rem;
+}
+.navbar-menu, .navbar-icon{
+    display: flex;
+    gap: 2rem;
+}
+nav a{
+    text-decoration: none;
+    color: #ffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+nav a:hover{
+    color: #147EFB;
+}
+.navbar-logo{
+    padding-right: 11rem;
+}
+.navbar-icon a{
+    font-size: 1.3rem;
+    color: #ffff;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.content .text{
+    color: #fff;
+    font-size: 14rem;
+    font-weight: bold;
+    margin-bottom: -270px;
+    opacity: 0; 
+    transform: translateY(100%); 
+    transition: opacity 1s ease, transform 1s ease;
+}
+.content .text.visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.hoodie{
+    z-index: 1;
+    max-width: 600px;
+}
+.hoodie img {
+    width: 100%;
+}
+
+
+
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.left-text{
+    position: relative;
+    left: 40px;
+    top: -20px;
+    border-bottom: 2px solid #383641;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.right-text{
+    position: relative;
+    right: 45px;
+    top: 40px;
+    border-bottom: 2px solid #383641;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.right-text::after {
+    content: '';
+    position: absolute;
+    left: 0; /* Start from the left end of the text */
+    bottom: 0.5px; /* Align with the bottom of the text */
+    width: 45px; /* Length of the angled part */
+    height: 2px; /* Height of the border */
+    background: #383641; /* Color of the border */
+    transform: rotate(135deg); /* Angle the border downwards */
+    transform-origin: left bottom; /* Pivot point for the rotation */
+}
+
+.left-text::after {
+    content: '';
+    position: absolute;
+    right: 0; 
+    bottom: 0.5px; 
+    width: 45px; 
+    height: 2px; 
+    background: #383641; 
+    transform: rotate(-135deg); 
+    transform-origin: right bottom;
+}
+
+
+/* Animation keyframes for left-text */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation keyframes for right-text */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
